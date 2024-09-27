@@ -1,0 +1,109 @@
+/* StudentList.css */
+
+/* Styling for the StudentList component */
+.StudentList {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #959292;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .create-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .create-button {
+    background-color: #042548;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .student-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .student-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .edit-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .save-button,
+  .cancel-button {
+    background-color: #042548;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover,
+  .cancel-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .student-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .student-name {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .student-actions button {
+    background-color: #042a52;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 50px;
+  }
+  .student-actions  .delete-button {
+    background-color: #781701;
+    
+  }
+
+  
+  .student-actions .edit-button:hover,
+  .student-actions .delete-button:hover,
+  .student-actions .view-button:hover {
+    background-color: #0056b3;
+  }
+  

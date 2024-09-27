@@ -1,0 +1,92 @@
+/* StudentDetail.module.css */
+
+/* Styling for the StudentDetail component */
+.StudentDetail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .class-info {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .class-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  
+  .class-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .class-info li:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .class-name {
+    font-weight: bold;
+    flex: 1;
+    margin-right: 200px;
+  }
+  
+  .drop-button {
+    background-color: #781701;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .drop-button:hover {
+    background-color: #b23b0d;
+  }
+  
+  .enroll-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .enroll-section select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .enroll-button {
+    background-color: #042548;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .enroll-button:hover {
+    background-color: #0056b3;
+  }
+  

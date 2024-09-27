@@ -1,0 +1,140 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './StudentList.css'
+
+
+function StudentList() {
+  const [students, setStudents] = useState([]);
+  const [newStudentName, setNewStudentName] = useState('');
+  const [editingStudentId, setEditingStudentId] = useState(null);
+  const [editedStudentName, setEditedStudentName] = useState('');
+  
+
+  // Fetch the students from the backend server
+  const fetchStudents = async () => {
+    try {
+      const response = await fetch('http://localhost:3001/students'); // Replace with your server URL
+      const fetchedStudents = await response.json();
+      setStudents(fetchedStudents); 
+    } catch (error) {
+      console.error('Error fetching students:', error);
+    }
+  };
+
+
+  //add a student to the database
+  const handleCreateStudent = async () => {
+    if (newStudentName) {
+      try {
+        await fetch('http://localhost:3001/students', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name: newStudentName }),
+        });
+        setNewStudentName('');
+        // Refresh the student list
+        fetchStudents();
+      } catch (error) {
+        console.error('Error creating student:', error);
+      }
+    }
+  };
+
+  // 
+  const handleEditStudent = (studentId) => {
+    setEditingStudentId(studentId); // Keep track of the student being edited
+    const studentToEdit = students.find((student) => student.id === studentId); //Find the student to edit 
+    setEditedStudentName(studentToEdit.name); 
+  };
+
+  const handleSaveEdit = async (studentId) => {
+    try {
+      await fetch(`http://localhost:3001/students/${studentId}?update=true`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: editedStudentName }), // Send editedStudentName to the server
+      });
+      setEditingStudentId(null);
+      // Refresh the student list
+      fetchStudents();
+    } catch (error) {
+      console.error('Error editing student:', error);
+    }
+  };
+
+  // delete the student from the database
+  const handleDeleteStudent = async (studentId) => {
+    try {
+      await fetch(`http://localhost:3001/students/${studentId}`, {
+        method: 'DELETE',
+      });
+      // Refresh the student list
+      fetchStudents();
+    } catch (error) {
+      console.error('Error deleting student:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchStudents();
+  }, []);
+
+  return (
+    <div className="StudentList">
+      <h2 className="list-heading">Students:</h2>
+      <form className="create-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleCreateStudent();
+        }}
+      >
+        {/* Add a student*/}
+        <input
+          type="text"
+          value={newStudentName}
+          onChange={(e) => setNewStudentName(e.target.value)}
+          placeholder="Enter student name"
+          className="input-field"
+        />
+        <button type="submit" className="create-button">Create Student</button>
+      </form>
+
+      <ul className="student-list">
+        {students.map((student) => (
+          <li key={student.id} className="student-item">
+            {editingStudentId === student.id ? (
+              <>
+                <input
+                  type="text"
+                  value={editedStudentName}
+                  onChange={(e) => setEditedStudentName(e.target.value)}
+                  className="edit-input"
+                />
+                <button onClick={() => handleSaveEdit(student.id)} className="save-button">Save</button>
+                <button onClick={() => setEditingStudentId(null)} className="cancel-button">Cancel</button>
+              </>
+            ) : (
+              <>
+                <div className="student-info">
+                  <span className="student-name">{student.name}</span>
+                  <div className="student-actions">
+                    <button onClick={() => handleEditStudent(student.id)} className="edit-button">Edit</button>
+                    <button onClick={() => handleDeleteStudent(student.id)} className="delete-button">Delete</button>
+                    <Link to={`/view-classes/${student.id}`} className="view-button">View Classes</Link>
+                    
+                  </div>
+                </div>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default StudentList;

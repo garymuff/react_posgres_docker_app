@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://test:test_pass@localhost:5432/test"
+}
+
+model Student {
+  id       Int       @id @default(autoincrement())
+  name     String
+  classes  Class[]
+  grades   Grade[]   // Add a relationship to grades
+}
+
+model Class {
+  id       Int       @id @default(autoincrement())
+  name     String
+  students Student[]
+  grades   Grade[]   // Add a relationship to grades
+}
+
+model Grade {
+  id        Int      @id @default(autoincrement())
+  grade     Float
+  student   Student  @relation(fields: [studentId], references: [id])
+  studentId Int
+  class     Class    @relation(fields: [classId], references: [id])
+  classId   Int
+}

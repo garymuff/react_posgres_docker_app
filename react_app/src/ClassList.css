@@ -1,0 +1,111 @@
+/* ClassList.css */
+
+/* Styling for the ClassList component */
+.ClassList {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #959292;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .list-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .create-form {
+    display: flex;
+    align-items: space-between;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .create-button {
+    background-color: #042548;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .class-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .class-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .edit-input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .save-button,
+  .cancel-button {
+    background-color: #042548;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover,
+  .cancel-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .class-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .class-name {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .class-actions button {
+    background-color: #042548;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 50px;
+  }
+  
+  .class-actions .delete-button {
+    background-color: #781701;
+  }
+  
+  .class-actions .edit-button:hover,
+  .class-actions .delete-button:hover {
+    background-color: #0056b3;
+  }
+  

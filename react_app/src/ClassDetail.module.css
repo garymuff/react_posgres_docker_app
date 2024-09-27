@@ -1,0 +1,73 @@
+/* ClassDetail.module.css */
+
+/* Styling for the ClassDetail component */
+.ClassDetail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.class-info {
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* justify-content: space-between; */
+}
+
+.info-label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #555;
+}
+
+.student-list {
+  list-style: none;
+  padding: 0;
+}
+
+.student-item {
+  display: flex; /* Add display: flex to arrange items horizontally */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+.student-name {
+  font-weight: bold;
+  flex: 1;
+  margin-right: 200px;
+}
+
+
+.student-item:last-child {
+  margin-bottom: 0;
+}
+
+.student-item:hover {
+  background-color: #e0e0e0;
+}
+.student-name {
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+/* Style the grade input */
+.student-item input[type="number"] {
+  flex: 1; /* Allow the input to grow and take available space */
+  margin-left: 10px; /* Add some space between name and input */
+  justify-content: space-between;
+}
